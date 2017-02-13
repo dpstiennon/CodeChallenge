@@ -24,37 +24,37 @@
         <p class="lead">Write WebAPI and associated server-side logic to capture the form data and display the data on a new page. You don't need to save it to the database</p>
     </div>
     <div class="row" ng-controller="ChallengeController as challengeCtrl">
-        <form method="post" action="/" class="col-md-4" ng-submit="challengeCtrl.submitFn()">
+        <form method="post" action="/" class="col-md-4" ng-submit="challengeCtrl.submitFn($event)">
             <div class="form-group">
-                <label class="">
+                <label >
                     Your Name
                 </label>
                 <input type="text" class="form-control" ng-model="challengeCtrl.name"/>
             </div>
-            <div class="radio">
+            <div>
                 <label>
-                    Color:
+                    Color
                 </label>
+            </div>
+            <div class="radio form-group">
                 <label>
-                    <input type="checkbox" name="colors"/>
+                    <input type="radio" name="color"/>
                     Red
                 </label>
-                <br/>
                 <label>
-                    <input type="checkbox" name="color"/>
+                    <input type="radio" name="color"/>
                     Green
                 </label>
-                <br/>
                 <label>
-                    <input type="checkbox" name="colors"/>
+                    <input type="radio" name="color"/>
                     Blue
                 </label>
             </div>
             <div class="form-group">
                 <label>
-                    Day:
+                    Day
                 </label>
-                <select ng-model="challengeCtrl.weekday">
+                <select ng-model="challengeCtrl.weekday" class="form-control">
                     <option>Mon</option>
                     <option>Tue</option>
                     <option>Wed</option>
@@ -65,7 +65,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Submit" class="btn btn-info"/>
             </div>
         </form>
     </div>
