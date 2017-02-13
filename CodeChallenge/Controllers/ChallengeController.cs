@@ -13,5 +13,10 @@ namespace CodeChallenge.Controllers
         {
             return View();
         }
+
+        public ActionResult ChallengeData()
+        {
+            return View();
+        }
     }
 }
