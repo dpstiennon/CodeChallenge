@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model CodeChallenge.Models.ChallengeData
 
 @{
     Layout = null;
@@ -12,7 +12,8 @@
 </head>
 <body>
 <div>
-      
+    @Model.Name
+    @Model.Weekday
 </div>
 </body>
 </html>

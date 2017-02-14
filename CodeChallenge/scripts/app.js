@@ -3,7 +3,6 @@
     angular.module('challenge', [])
         .controller('ChallengeController', function challengeCtrl($http) {
             var ctrl = this;
-
             ctrl.weekday = 'Mon';
             ctrl.name = '';
 
@@ -11,7 +10,6 @@
                 return {
                     name: ctrl.name,
                     weekday: ctrl.weekday
-                
                 };
             }
 

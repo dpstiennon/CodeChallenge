@@ -141,6 +141,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\api\SubmitChallengeController.cs" />
     <Compile Include="Controllers\ChallengeController.cs" />
+    <Compile Include="DAL\DataRepo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
