@@ -14,10 +14,7 @@ namespace CodeChallenge.Controllers.api
     public class SubmitChallengeController : ApiController
     {
         private DataRepo _repo = new DataRepo();
-        public string Get(int id)
-        {
-            return "value";
-        }
+
 
         // POST: api/SubmitChallenge
         public void Post([FromBody] ChallengeData data)
@@ -25,16 +22,6 @@ namespace CodeChallenge.Controllers.api
             Console.WriteLine(data);
             _repo.WriteData(data);
 
-        }
-
-        // PUT: api/SubmitChallenge/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/SubmitChallenge/5
-        public void Delete(int id)
-        {
         }
     }
 }

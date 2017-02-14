@@ -16,7 +16,7 @@
 <body>
 
 <div class="container" ng-app="challenge">
-    <div ng-controller="ChallengeController as challengeCtrl">
+    <div ng-controller="ChallengeController as challengeCtrl" ng-cloak>
         <div class="page-header">
             <h1>Code Challenge</h1>
             <p class="lead">
@@ -24,7 +24,7 @@
             </p>
             <p class="lead">Write WebAPI and associated server-side logic to capture the form data and display the data on a new page. You don't need to save it to the database</p>
         </div>
-        <div class="row" >
+        <div class="row">
             <form method="post" action="/" class="col-md-4" ng-submit="challengeCtrl.submitFn($event)">
                 <div class="form-group">
                     <label>
@@ -39,15 +39,15 @@
                 </div>
                 <div class="radio form-group">
                     <label>
-                        <input type="radio" name="color"/>
+                        <input type="radio" ng-model="challengeCtrl.color" value ="Red" name="color"/>
                         Red
                     </label>
                     <label>
-                        <input type="radio" name="color"/>
+                        <input type="radio" ng-model="challengeCtrl.color" value="Green" name="color"/>
                         Green
                     </label>
                     <label>
-                        <input type="radio" name="color"/>
+                        <input type="radio" ng-model="challengeCtrl.color" value="Blue" name="color"/>
                         Blue
                     </label>
                 </div>
@@ -70,12 +70,12 @@
                 </div>
             </form>
         </div>
-            <div class="well">
-                <strong>Success!</strong>
-                <div>
-                    Data successfully submitted! Click @Html.ActionLink("here", "ChallengeData") To view.
-                </div>
+        <div class="alert alert-info" ng-if="challengeCtrl.success">
+            <strong>Success!</strong>
+            <div>
+                Data successfully submitted! Click @Html.ActionLink("here", "ChallengeData") To view.
             </div>
+        </div>
     </div>
 </div>
 <script src="/scripts/app.js"></script>

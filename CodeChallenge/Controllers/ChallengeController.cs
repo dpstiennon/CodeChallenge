@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CodeChallenge.DAL;
+using CodeChallenge.Models;
 
 namespace CodeChallenge.Controllers
 {
@@ -18,7 +19,7 @@ namespace CodeChallenge.Controllers
 
         public ActionResult ChallengeData()
         {
-            var data = _repo.ReadData();
+            var data = _repo.ReadData() ?? new ChallengeData();
             return View(data);
         }
     }
