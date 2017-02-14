@@ -14,19 +14,24 @@
         .controller('ChallengeController',
             function challengeCtrl($http) {
                 var ctrl = this;
-                ctrl.weekday = 'Mon';
+                ctrl.weekdayOptions = weekdays;
+                ctrl.weekday = 'Monday';
                 ctrl.name = '';
                 ctrl.color = 'Red';
-                ctrl.weekdayOptions = weekdays;
+                ctrl.triedToSubmit = false;
 
 
                 ctrl.submitFn = function(e) {
                     e.preventDefault();
-                    $http({ method: 'POST', url: '/api/SubmitChallenge', data: ctrl })
-                        .success(function() {
-                            ctrl.success = true;
-                        })
-                        .error(function() { console.error("Failed to send data to serve"); });
+                    if (ctrl.form.$valid) {
+                        $http({ method: 'POST', url: '/api/SubmitChallenge', data: ctrl })
+                            .success(function() {
+                                ctrl.success = true;
+                            })
+                            .error(function() { console.error("Failed to send data to serve"); });
+                    } else {
+                        ctrl.triedToSubmit = true;
+                    }
                 };
 
             });
