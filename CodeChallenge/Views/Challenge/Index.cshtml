@@ -55,14 +55,9 @@
                     <label>
                         Day
                     </label>
-                    <select ng-model="challengeCtrl.weekday" class="form-control">
-                        <option>Mon</option>
-                        <option>Tue</option>
-                        <option>Wed</option>
-                        <option>Thurs</option>
-                        <option>Fri</option>
-                        <option>Sat</option>
-                        <option>Sun</option>
+                    <select ng-model="challengeCtrl.weekday"
+                            class="form-control" 
+                            ng-options="day.long as day.short for day in challengeCtrl.weekdayOptions">
                     </select>
                 </div>
                 <div class="form-group">
