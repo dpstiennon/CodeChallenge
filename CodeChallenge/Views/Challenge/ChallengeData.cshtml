@@ -9,13 +9,27 @@
 <html>
 <head>
     <title>Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link href="~/styles/site.css" rel="stylesheet" />
 </head>
 <body>
-<div>
+<div class="container">
+    <h1>Contratulations on submitting your data!</h1>
+    <h4>Does this look right?</h4>
+    <div class="challenge-data">
+        Name: @Model.Name
+    </div>
+    <div class="challenge-data">
+        Weekday: @Model.Weekday
+    </div>
+    <div class="challenge-data">
+        Color: <div class="circle @Model.Color"></div>
+    </div>
+    <div>
+        @Html.ActionLink("Return to Challenge", "Index")
+    </div>
 
-    @Model.Name
-    @Model.Weekday
-    @Model.Color
+
 </div>
 </body>
 </html>

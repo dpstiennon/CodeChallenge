@@ -1,0 +1,22 @@
+﻿.circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.challenge-data {
+    font-size: 12pt;
+}
+
+.circle.Red {
+    background-color: red;
+}
+
+.circle.Blue {
+    background-color: blue;
+}
+
+.circle.Green {
+    background-color: green;
+}
